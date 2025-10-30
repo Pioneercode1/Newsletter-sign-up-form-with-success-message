@@ -1,0 +1,95 @@
+:root {
+    /* Colors */
+    /* Primary */
+    --red: hsl(4, 100%, 67%);
+    /* Neutral */
+    --blue-800: hsl(234, 29%, 20%);
+    --blue-700: hsl(235, 18%, 26%);
+    --grey: hsl(0, 0%, 58%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.roboto-font-style {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    color: var(--blue-700);
+}
+
+body {
+    width: clamp(375px, 50%, 38rem);
+    background-color: var(--blue-700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.component-container {
+    background-color: var(--white);
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    row-gap: 1.5rem;
+    width: 88%;
+    height: 670px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image-hero {
+    grid-template-rows: 1;
+}
+
+.image-hero img {
+    width: 100%;
+    object-fit: cover;
+    object-position: 0;
+}
+
+.main-description {
+    grid-template-rows: 2;
+    padding-inline: 1.5rem;
+}
+
+.main-description h1 {
+    font-size: 2rem;
+    margin-block-end: 1rem;
+}
+
+.main-description p {
+    font-size: clamp(14px, 1.5vw, 1rem);
+    margin-block-end: 1rem;
+}
+
+.main-description ol {
+    margin-block-end: 2.5rem;
+}
+
+.main-description ol li {
+    font-size: clamp(14px, 1.5vw, 1rem);
+    padding-inline-start: 1.5rem;
+    margin-block-end: 0.5rem;
+}
+
+.form-sign-up {
+    margin-block-end: 1rem;
+}
+
+.form-sign-up fieldset {
+    border: none;
+}
+
+.label-email {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
