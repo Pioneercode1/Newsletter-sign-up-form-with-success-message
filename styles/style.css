@@ -79,12 +79,21 @@ body {
 .main-description ol {
     margin-block-end: 2rem;
     line-height: 1.5;
+    list-style: none;
 }
 
 .main-description ol li {
     font-size: clamp(14px, 1.5vw, 1rem);
-    padding-inline-start: 1.5rem;
+    counter-increment: item;
+    position: relative;
     margin-block-end: 0.5rem;
+    padding-inline-start: 2rem;
+}
+
+.main-description ol li::before {
+    content: url(../assets/images/icon-list.svg);
+    position: absolute;
+    left: 0;
 }
 
 .form-sign-up {
@@ -192,7 +201,7 @@ body {
 
     .component-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         justify-content: center;
         align-content: center;
         gap: 1rem;
@@ -205,6 +214,11 @@ body {
     .image-hero {
         width: 50%;
         height: 100%;
+        
+    }
+
+    .image-hero img {
+        border-top-left-radius: 1.5rem;
     }
 
     .main-description {
