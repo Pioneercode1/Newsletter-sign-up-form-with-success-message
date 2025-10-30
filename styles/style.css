@@ -2,6 +2,7 @@
     /* Colors */
     /* Primary */
     --red: hsl(4, 100%, 67%);
+    --yellow: hsla(26, 100%, 67%, 0.932);
     /* Neutral */
     --blue-800: hsl(234, 29%, 20%);
     --blue-700: hsl(235, 18%, 26%);
@@ -27,36 +28,37 @@
 }
 
 body {
-    width: clamp(375px, 50%, 38rem);
     background-color: var(--blue-700);
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 .component-container {
     background-color: var(--white);
-    display: grid;
-    grid-template-rows: 1fr 2fr;
-    row-gap: 1.5rem;
-    width: 88%;
-    height: 670px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: clamp(320px, 50%, 35rem);
+    height: clamp(700px, 80vw, 50rem);
     border-radius: 10px;
     overflow: hidden;
+    padding-block-end: 1rem;
 }
 
-.image-hero {
-    grid-template-rows: 1;
-}
+/* .image-hero {
+    
+} */
 
 .image-hero img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: 0;
 }
 
 .main-description {
-    grid-template-rows: 2;
     padding-inline: 1.5rem;
 }
 
@@ -71,7 +73,8 @@ body {
 }
 
 .main-description ol {
-    margin-block-end: 2.5rem;
+    margin-block-end: 2rem;
+    line-height: 1.5;
 }
 
 .main-description ol li {
@@ -93,3 +96,57 @@ body {
     font-weight: 700;
 }
 
+#input-email {
+    padding: 0.8rem;
+    margin-block-start: 0.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid var(--grey);
+}
+
+#button-subscribe {
+    padding: 0.8rem;
+    margin-block-start: 0.3rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--blue-800);
+    color: var(--white);
+    font-weight: 700;
+    transition: background 0.5s ease-in-out;
+}
+
+#button-subscribe:hover {
+    background: linear-gradient(to left, var(--red), var(--yellow));
+}
+
+#button-subscribe:focus {
+    background: linear-gradient(to right, var(--red), var(--yellow));
+}
+
+/* desktop design min width 1440px = 90rem */
+
+@media (min-width: 88rem) {
+
+    .component-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        gap: 1rem;
+        margin: 10% auto;
+        width: clamp(700px, 70%, 55rem);
+        height: clamp(350px, 39vw, 28rem);
+        padding: 1rem;
+    }
+
+    .image-hero {
+        width: 50%;
+        height: 100%;
+    }
+
+    .main-description {
+        width: 50%;
+        height: 100%;
+    }
+}
