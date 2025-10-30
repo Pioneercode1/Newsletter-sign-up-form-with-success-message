@@ -5,10 +5,16 @@ const messageShow = document.getElementById("success-message-start");
 const emailValue = document.getElementById("input-email");
 const userEmail =  document.getElementById("user-email");
 //
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+// 
 buttonSubscribe.addEventListener("click", () => {
-
-    if (emailValue.value.trim() === "") {
+    const email = emailValue.value.trim();
+    if (email === "" || !isValidEmail(email)) {
         pError.setAttribute("class", "p-error-states-show");
+        emailValue.value = "";
     }
     else {
         messageShow.setAttribute("class", "success-message-start-show");

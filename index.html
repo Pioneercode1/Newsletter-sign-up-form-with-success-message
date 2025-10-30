@@ -37,7 +37,7 @@
             <label class="label-email" for="email">Email address</label>
             <p id="p-error-states" class="p-error-states-hidden">Valid email required</p>
           </div>
-          <input type="email" name="email" id="input-email" placeholder="email@company.com" required>
+          <input type="email" name="email" id="input-email" placeholder="email@company.com" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email format">
         </fieldset>
       </form>
       <button type="button" id="button-subscribe" class="style-button">Subscribe to monthly newsletter</button>
