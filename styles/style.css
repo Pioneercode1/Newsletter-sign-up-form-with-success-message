@@ -2,6 +2,7 @@
     /* Colors */
     /* Primary */
     --red: hsl(4, 100%, 67%);
+    --dark-red: hsl(4, 63%, 48%);
     --yellow: hsla(26, 100%, 67%, 0.932);
     /* Neutral */
     --blue-800: hsl(234, 29%, 20%);
@@ -39,17 +40,20 @@ body {
     background-color: var(--white);
     display: flex;
     flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
     gap: 1.5rem;
     width: clamp(320px, 50%, 35rem);
     height: clamp(700px, 80vw, 50rem);
     border-radius: 10px;
     overflow: hidden;
     padding-block-end: 1rem;
+    position: relative;
 }
 
-/* .image-hero {
-    
-} */
+.image-hero {
+    width: 100%;
+}
 
 .image-hero img {
     width: 100%;
@@ -91,9 +95,23 @@ body {
     border: none;
 }
 
-.label-email {
+.container-email-and-error {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
     font-size: 0.8rem;
     font-weight: 700;
+    padding-inline: 4px;
+}
+
+.p-error-states-show {
+    color: var(--dark-red);
+    display: contents;
+    font-size: 0.7rem;
+}
+
+.p-error-states-hidden {
+    display: none;
 }
 
 #input-email {
@@ -104,7 +122,12 @@ body {
     border: 1px solid var(--grey);
 }
 
-#button-subscribe {
+#input-email:hover {
+    border: 2px solid var(--yellow);
+    cursor: pointer;
+}
+
+.style-button {
     padding: 0.8rem;
     margin-block-start: 0.3rem;
     width: 100%;
@@ -116,12 +139,51 @@ body {
     transition: background 0.5s ease-in-out;
 }
 
-#button-subscribe:hover {
+.style-button:hover {
     background: linear-gradient(to left, var(--red), var(--yellow));
+    cursor: pointer;
 }
 
-#button-subscribe:focus {
+.style-button:focus {
     background: linear-gradient(to right, var(--red), var(--yellow));
+}
+
+/* Success message start */
+.success-message-start-hidden {
+    display: none;
+}
+
+.success-message-start-show {
+    width: 100%;
+    height: 100%;
+    padding-block-start: 20%;
+    padding-block-end: 2rem;
+    padding-inline: 1.5rem;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.description-message {
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.description-message img {
+    width: 60px;
+    margin-block-end: 1.5rem;
+}
+
+.description-message h3 {
+    font-size: 2rem;
+    margin-block-end: 1rem;
 }
 
 /* desktop design min width 1440px = 90rem */

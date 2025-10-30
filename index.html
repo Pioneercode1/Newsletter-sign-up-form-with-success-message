@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/style.css">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
@@ -33,26 +33,33 @@
       </ol>
       <form id="form-sign-up" class="form-sign-up">
         <fieldset>
-          <label class="label-email" for="email">Email address</label><br>
+          <div class="container-email-and-error">
+            <label class="label-email" for="email">Email address</label>
+            <p id="p-error-states" class="p-error-states-hidden">Valid email required</p>
+          </div>
           <input type="email" name="email" id="input-email" placeholder="email@company.com" required>
         </fieldset>
       </form>
-      <button type="button" id="button-subscribe">Subscribe to monthly newsletter</button>
+      <button type="button" id="button-subscribe" class="style-button">Subscribe to monthly newsletter</button>
     </div>
+    <!-- Success message start -->
+    <section class="success-message-start-hidden">
+      <div class="description-message">
+        <img src="./assets/images/icon-success.svg" alt="icon success">
+        <h3>Thanks for subscribing!</h3>
+        <p>A confirmation email has been sent to <strong>ash@loremcompany.com.</strong>
+          Please open it and click the button inside to confirm your subscription.</p>
+      </div>
+      <button class="style-button">Dismiss message</button>
+    </section>
   </article>
-  <!-- Sign-up form end -->
 
-  <!-- Success message start -->
-  <!-- <div class="success-message-start">
-    <h3>Thanks for subscribing!</h3>
-    <p>A confirmation email has been sent to ash@loremcompany.com.
-      Please open it and click the button inside to confirm your subscription.</p>
-    <p>Dismiss message</p>
-  </div> -->
+
   <!-- Success message end -->
   <!-- <div class="success-message-end">
     <h3>Success message</h3>
   </div> -->
+
 </body>
 
 </html>
