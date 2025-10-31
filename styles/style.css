@@ -116,7 +116,7 @@ body {
 .p-error-states-show {
     color: var(--dark-red);
     display: contents;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
 }
 
 .p-error-states-hidden {
@@ -128,7 +128,7 @@ body {
     margin-block-start: 0.5rem;
     width: 100%;
     border-radius: 0.5rem;
-    border: 1px solid var(--grey);
+    border: 2px solid var(--grey);
 }
 
 #input-email:hover {
@@ -215,10 +215,6 @@ body {
         width: 50%;
         height: 100%;
         
-    }
-
-    .image-hero img {
-        border-top-left-radius: 1.5rem;
     }
 
     .main-description {
